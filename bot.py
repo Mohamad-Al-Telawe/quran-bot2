@@ -3,7 +3,13 @@ from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, filters, ContextTypes
 
 # رابط الاتصال بـ MongoDB
-client = MongoClient("mongodb://abwb7293:1ybQhn38Gcx8KpDS@ac-k5pzowt-shard-00-00.7yjkzmr.mongodb.net:27017,ac-k5pzowt-shard-00-01.7yjkzmr.mongodb.net:27017,ac-k5pzowt-shard-00-02.7yjkzmr.mongodb.net:27017/?replicaSet=atlas-k5pzowt-shard-0&ssl=true&authSource=admin")
+client = MongoClient(
+    "mongodb://abwb7293:1ybQhn38Gcx8KpDS@ac-k5pzowt-shard-00-00.7yjkzmr.mongodb.net:27017,"
+    "ac-k5pzowt-shard-00-01.7yjkzmr.mongodb.net:27017,"
+    "ac-k5pzowt-shard-00-02.7yjkzmr.mongodb.net:27017/"
+    "?ssl=true&replicaSet=atlas-k5pzowt-shard-0&authSource=admin&retryWrites=true&w=majority"
+)
+
 
 db = client["quran_bot"]  # اسم قاعدة البيانات
 students_collection = db["students"]  # اسم الكوليكشن
