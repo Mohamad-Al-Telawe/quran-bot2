@@ -3,7 +3,8 @@ from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, filters, ContextTypes
 
 # رابط الاتصال بـ MongoDB
-client = MongoClient("mongodb+srv://abwb7293:1ybQhn38Gcx8KpDS@cluster0.7yjkzmr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+client = MongoClient("mongodb://abwb7293:1ybQhn38Gcx8KpDS@ac-k5pzowt-shard-00-00.7yjkzmr.mongodb.net:27017,ac-k5pzowt-shard-00-01.7yjkzmr.mongodb.net:27017,ac-k5pzowt-shard-00-02.7yjkzmr.mongodb.net:27017/?replicaSet=atlas-k5pzowt-shard-0&ssl=true&authSource=admin")
+
 db = client["quran_bot"]  # اسم قاعدة البيانات
 students_collection = db["students"]  # اسم الكوليكشن
 
@@ -60,5 +61,5 @@ if __name__ == '__main__':
     app.add_handler(CommandHandler("check", check_command))
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
 
-    print("✅ البوت يعمل الآن ...")
+    print("✅ البوت يعسمل الآن ...")
     app.run_polling()
