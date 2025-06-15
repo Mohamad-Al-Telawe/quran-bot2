@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>نقاط الطلاب</title>
+    <style>
+        body { font-family: Arial, sans-serif; direction: rtl; text-align: center; background: #f4f4f4; padding: 20px; }
+        table { width: 60%; margin: auto; border-collapse: collapse; background: #fff; }
+        th, td { padding: 10px; border: 1px solid #ccc; }
+        th { background: #4CAF50; color: white; }
+    </style>
+</head>
+<body>
+    <h2>📋 جدول نقاط الطلاب</h2>
+    <table>
+        <tr><th>رقم الطالب</th><th>النقاط</th></tr>
+        {% for s in students %}
+        <tr><td>{{ s.id }}</td><td>{{ s.points }}</td></tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
